@@ -26,8 +26,8 @@ const SOCIAL_LINKS = [
   },
   {
     name: 'Instagram',
-    handle: '@badarulzaman56',
-    url: 'https://instagram.com/badarulzaman56',
+    handle: '@thesame_badar',
+    url: 'https://www.instagram.com/thesame_badar?igsh=djB5MjBjZmFwajY5',
     color: '#e4405f',
     icon: (
       <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
