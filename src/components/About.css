@@ -1,0 +1,224 @@
+.about {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-text {
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.about-text strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.about-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* CARD STACK */
+.about-card-stack {
+  position: relative;
+  height: 380px;
+}
+
+.about-card {
+  position: absolute;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-card:hover { transform: translateY(-4px) !important; }
+
+.primary-card {
+  width: 280px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: linear-gradient(135deg, rgba(17,17,34,0.9), rgba(13,13,26,0.9));
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.secondary-card {
+  width: 240px;
+  top: 160px;
+  right: 0;
+  z-index: 3;
+  background: linear-gradient(135deg, rgba(17,17,34,0.95), rgba(13,13,26,0.95));
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  transform: rotate(2deg);
+}
+
+.secondary-card:hover { transform: rotate(0deg) translateY(-4px) !important; }
+
+.card-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 12px 12px 0 0;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.2rem;
+}
+
+.card-header h3 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.card-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(0,229,255,0.08);
+  border: 1px solid rgba(0,229,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+
+.info-row:last-child { border-bottom: none; }
+
+.info-key {
+  font-family: var(--mono);
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.info-val {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.status-open {
+  color: #4ade80;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.status-open::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: blink 2s ease-in-out infinite;
+}
+
+.currently-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.currently-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.currently-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ORBIT DECORATION */
+.about-orbit-container {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+}
+
+.orbit-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 20px var(--accent);
+}
+
+.orbit-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px dashed rgba(0,229,255,0.3);
+  animation: rotate360 6s linear infinite;
+}
+
+.orbit-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent2);
+  margin: -3px;
+  animation: orbit 6s linear infinite;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .about-card-stack { height: 300px; }
+  .primary-card { width: 240px; }
+  .secondary-card { width: 200px; top: 130px; }
+}
